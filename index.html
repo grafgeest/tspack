@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" ng-strict-di>
+
+<head>
+  <meta charset="utf-8" />
+  <base href="/">
+</head>
+
+<body>
+  <script src="dist/bundle.js"></script>
+  <div id="output">...</div>
+  <button onclick="appCtrl.updateWithPromise('output')">Get data with promise</button>
+  <button onclick="appCtrl.updateWithCallback('output')">Get data with callback</button>
+  <button onclick="appCtrl.updateWithGenerator('output')">Get data with generator</button>
+</body>
+
+</html>

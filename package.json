@@ -1,0 +1,36 @@
+{
+  "name": "tspack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./app/boot.js",
+  "scripts": {
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "serve": "http-server",
+    "build": "concurrent \"npm run tsc\" \"npm run webpack\"",
+    "build:w": "concurrent \"npm run tsc:w\" \"npm run webpack:w\"",
+    "webpack": "webpack --config webpack.config.js",
+    "webpack:w": "webpack --config webpack.config.js --watch",
+    "start": "concurrent \"npm run build:w\" \"npm run serve\" ",
+    "cleanup": "rm -rf ./dist | find ./app -name \\*.js -delete -o -name \\*.map -delete",
+    "test": "concurrent \"npm run tsc:w\" \"karma start\" "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jasmine": "^2.5.53",
+    "concurrently": "^3.5.0",
+    "jasmine": "^2.7.0",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "karma-typescript": "^3.0.5",
+    "ts-loader": "^2.3.2",
+    "tslint": "^5.6.0",
+    "typescript": "^2.4.2",
+    "webpack": "^3.4.1"
+  }
+}
